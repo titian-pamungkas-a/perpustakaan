@@ -32,6 +32,7 @@
                     </tr>
                   </thead>
                   <tbody>
+                    {{-- Data Anggota Perpustakaan --}}
                     @if ($anggotas->count()>0)
                         @foreach ($anggotas as $anggota)
                         <tr class="border-b">
@@ -57,12 +58,15 @@
                           </td>
                       </tr>
                         @endforeach
+                    @else
+                        <tr>
+                          <td class="px-6 py-4 text-center" colspan="5">Anggota tidak ada</td>
+                        </tr>
                     @endif
+                        
                     
                   </tbody>
                 </table>
-                
-                {{-- {{$anggotas->links()}} --}}
               </div>
             </div>
           </div>
@@ -72,8 +76,5 @@
         {{$anggotas->onEachSide(1)->links()}}
       </div>
     </section>
-    <!--Section: Design Block-->
-  
   </div>
-  <!-- Container for demo purpose -->
 @endsection

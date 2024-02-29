@@ -13,8 +13,10 @@ class AnggotaSeeder extends Seeder
      */
     public function run(): void
     {
+        // Generate nomer HP secara otomatis
         $char = '0123456789';
         $charlen = strlen($char);
+        // Membuat data dummy secara random
         for ($i=0;$i<10;$i++){
             $str = '082';
             for ($j=0;$j<9;$j++){

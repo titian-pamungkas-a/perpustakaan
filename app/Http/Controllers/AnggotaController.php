@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class AnggotaController extends Controller
 {
     public function index(){
-        //$anggotas = Anggota::all();
+        // Membatasi data tabel sejumlah 6
         $anggotas = Anggota::paginate(6);
         return view('anggota.index', compact('anggotas'));
     }
@@ -18,6 +18,7 @@ class AnggotaController extends Controller
     }
 
     public function store(Request $request){
+        // Validasi 
         $request->validate([
             'name' => 'required',
             'email' => 'required|email',
@@ -40,6 +41,7 @@ class AnggotaController extends Controller
 
     public function update(Request $request, string $id){
         $anggota = Anggota::findOrFail($id);
+        // Validasi
         $request->validate([
             'name' => 'required',
             'email' => 'required|email',

@@ -8,7 +8,6 @@
 <body>
     @include('layouts.navbar')
     @include('layouts.sidebar')
-    {{-- @include('layouts.sidenav') --}}
     <div class="p-4 sm:ml-64">
         <div class="p-4 mt-14">
             <h1 class="flex items-center text-5xl font-extrabold mb-10 ml-3">@yield('title')</h1>
